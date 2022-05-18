@@ -1,7 +1,39 @@
+basePath: /user
+definitions:
+  model.User:
+    properties:
+      address:
+        type: string
+      email:
+        type: string
+      id:
+        type: string
+      name:
+        type: string
+      phone:
+        type: string
+      user_number:
+        type: string
+    type: object
 host: localhost:5000
 info:
   contact: {}
   title: User API documentation
   version: 1.0.0
-paths: {}
+paths:
+  /:
+    get:
+      description: get all users
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/model.User'
+        "404":
+          description: Not Found
+          schema:
+            type: object
+      summary: Get all users
+      tags:
+      - Users
 swagger: "2.0"

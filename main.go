@@ -12,11 +12,12 @@ import (
 
 	"github.com/joho/godotenv"
 )
+
 // @title User API documentation
 // @version 1.0.0
 
 // @host localhost:5000
-
+// @BasePath /user
 
 func main() {
 	err := godotenv.Load(".env")

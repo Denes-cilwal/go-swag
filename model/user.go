@@ -27,7 +27,13 @@ func (u *User) BeforeCreate(db *gorm.DB) error {
 	return err
 }
 
-//GetAllUsers Fetch all user data
+// GetUsers  ... Get all users
+// @Summary Get all users
+// @Description get all users
+// @Tags Users
+// @Success 200 {object} model.User
+// @failure 404 {object} object
+// @Router / [get]
 func GetAllUsers(user *[]User) error {
 	if err := config.DB.Find(user).Error; err != nil {
 		return err
